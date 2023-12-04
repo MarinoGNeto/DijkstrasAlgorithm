@@ -45,12 +45,15 @@ public class Main {
      * Option 1 - Calculate the distance between two points
      */
     private static void calculateSmallestDistance(Scanner scanner) {
-        String initialVertexName = "";
-        String finalVertexName = "";
+        String initialVertexName;
+        String finalVertexName;
 
         initialVertexName = readVertexEnteredWhileNonexistent(scanner, "Initial vertex:");
         finalVertexName = readVertexEnteredWhileNonexistent(scanner, "Final vertex:");
-        if (initialVertexName.equals(finalVertexName)) System.out.println("Initial vertex and Final vertex are the same.");
+        if (initialVertexName.equals(finalVertexName)) {
+            System.out.println("Initial vertex and Final vertex are the same.");
+            return;
+        }
 
         Vertex initialVertex = DijkstraGraphUtil.getVertex(initialVertexName);
         Vertex finalVertex = DijkstraGraphUtil.getVertex(finalVertexName);
